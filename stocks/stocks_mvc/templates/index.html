@@ -6,5 +6,10 @@
     </head>
     <body>
         <h1>Some Stock Info</h1>
+        <ul>
+            {% for stock_exchange in data %}
+            <li>{{ stock_exchange.code }} ({{ stock_exchange.name }})</li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
