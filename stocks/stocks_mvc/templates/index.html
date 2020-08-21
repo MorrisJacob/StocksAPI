@@ -1,14 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'stocks/site.css' %}">
 <html>
     <head>
         <meta charset="utf-8">
         <title>Stocks</title>
     </head>
     <body>
-        <h1>Some Stock Info</h1>
+        <h1>Some Stocks on US Market</h1>
         <ul>
             {% for stock_exchange in data %}
-            <li>{{ stock_exchange.code }} ({{ stock_exchange.name }})</li>
+            <a href="single_stock?stock={{ stock_exchange.symbol}}&name={{ stock_exchange.description }}">
+            <li>{{ stock_exchange.symbol }} ({{ stock_exchange.description }})</li>
             {% endfor %}
         </ul>
     </body>

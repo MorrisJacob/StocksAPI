@@ -115,7 +115,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-FINNHUB_API_KEY = 'bpvsf27rh5rddd65cnjg'
+FINNHUB_API_KEY = 'bsrcffv48v6tucpg2lf0'
 
 
 # Static files (CSS, JavaScript, Images)

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'stocks/site.css' %}">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Stock Data for {{ stock_name }}</title>
+    </head>
+    <body>
+        <h1>Some Stock Info For {{ stock_name }}</h1>
+        <h2><a href="/"><< Back</a></h2>
+        <ul>
+            {% if not data %}
+            <p>No Data Found :( </p>
+            {% endif %}
+            {% for stock_exchange in data %}
+                <li>{{ stock_exchange.period }}:
+                    <ul>
+                        <li>Buy: {{ stock_exchange.buy }}%</li>
+                        <li>Hold: {{ stock_exchange.hold }}%</li>
+                        <li>Sell: {{ stock_exchange.sell }}%</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
